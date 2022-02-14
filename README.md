@@ -6,7 +6,7 @@ sudo apt install zsh
 ```
 or
 ```
-sudo pacman -S zas
+sudo pacman -S zsh
 ```
 ### 2. Clone the repo:
 ```
