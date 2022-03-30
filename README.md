@@ -24,3 +24,7 @@ cd ~/.zsh && git submodule update --init
 ```
 pip install thefuck
 ```
+### 6. Change your default shell
+```
+chsh -s $(which zsh)
+```
