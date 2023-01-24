@@ -8,24 +8,26 @@ or
 ```
 sudo pacman -S zsh
 ```
-### 2. Clone the repo:
+### 2. Backup old configs:
 ```
-rm -Rfv ~/.zsh
+mv -v ~/.zsh ~/.zsh-$(date +%d-%m-%Y-at-%H-%m)
+### 3. Clone the repo:
+```
 git clone --recurse-submodules git@github.com:keedhost/zsh.git ~/.zsh --recursive --progress  --remote
 ```
-### 3. Create symlink for general config file:
+### 4. Create symlink for general config file:
 ```
 ln -s ~/.zsh/zshrc ~/.zshrc
 ```
-### 4. Update submodules (for Oh-my-zsh!):
+### 5. Update submodules (for Oh-my-zsh!):
 ```
 cd ~/.zsh && git submodule update --init
 ```
-### 5. Install additional tools:
+### 6. Install additional tools:
 ```
 pip install thefuck
 ```
-### 6. Change your default shell
+### 7. Change your default shell
 ```
 chsh -s $(which zsh)
 ```
