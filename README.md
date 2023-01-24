@@ -20,15 +20,11 @@ git clone --recurse-submodules git@github.com:keedhost/zsh.git ~/.zsh --recursiv
 ```
 ln -s ~/.zsh/zshrc ~/.zshrc
 ```
-### 5. Update submodules (for Oh-my-zsh!):
-```
-cd ~/.zsh && git submodule update --init
-```
-### 6. Install additional tools:
+### 5. Install additional tools:
 ```
 pip install thefuck
 ```
-### 7. Change your default shell
+### 6. Change your default shell
 ```
 chsh -s $(which zsh)
 ```
