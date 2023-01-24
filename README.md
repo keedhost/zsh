@@ -11,6 +11,7 @@ sudo pacman -S zsh
 ### 2. Backup old configs:
 ```
 mv -v ~/.zsh ~/.zsh-$(date +%d-%m-%Y-at-%H-%m)
+```
 ### 3. Clone the repo:
 ```
 git clone --recurse-submodules git@github.com:keedhost/zsh.git ~/.zsh --recursive --progress  --remote
