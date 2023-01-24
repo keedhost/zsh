@@ -1,6 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init zsh pre)"
+[ -f "$(which fig)" ] && eval "$(fig init zsh pre)"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/homebrew/bin:$PATH
@@ -108,5 +108,4 @@ source $ZSH/oh-my-zsh.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Fig post block. Keep at the bottom of this file.
-eval "$(fig init zsh post)"
-
+[ -f "$(which fig)" ] && eval "$(fig init zsh post)"
