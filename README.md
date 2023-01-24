@@ -10,6 +10,7 @@ sudo pacman -S zsh
 ```
 ### 2. Clone the repo:
 ```
+rm -Rfv ~/.zsh
 git clone git@github.com:keedhost/zsh.git ~/.zsh
 ```
 ### 3. Create symlink for general config file:
