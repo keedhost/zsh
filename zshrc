@@ -107,5 +107,7 @@ source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+PROMPT="%{${fg_bold[red]}%}%n %{${fg_bold[blue]}%}[%m] %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
+
 # Fig post block. Keep at the bottom of this file.
 [ -f "$(which fig)" ] && eval "$(fig init zsh post)"
