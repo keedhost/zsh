@@ -107,6 +107,18 @@ source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 alias q="cd .."
+alias git_log="git log \
+    --graph \
+    --pretty=oneline \
+    --abbrev-commit"
+
+alias git_clog="git log \
+    --graph \
+    --abbrev-commit \
+    --decorate \
+    --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' \
+    --all"
+
 PROMPT="%{${fg_bold[red]}%}%n %{${fg_bold[blue]}%}[%m] %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
 
 # Fig post block. Keep at the bottom of this file.
