@@ -75,7 +75,7 @@ ZSH_THEME="cypher"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man sudo colored-man-pages extract zsh-interactive-cd thefuck)
+plugins=(git man sudo colored-man-pages extract zsh-interactive-cd thefuck battery)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,7 +119,7 @@ alias git_clog="git log \
     --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' \
     --all"
 
-PROMPT="%{${fg_bold[red]}%}%n %{${fg_bold[blue]}%}[%m] %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
+PROMPT="%{${fg_bold[red]}%}%n %{${fg_bold[blue]}%}[%m] $(battery_pct_prompt) %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
 
 # Fig post block. Keep at the bottom of this file.
 [ -f "$(which fig)" ] && eval "$(fig init zsh post)"
