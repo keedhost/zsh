@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${PATH}:${HOME}/.local/bin:${HOME}/bin"
 [ -f "$(which fig)" ] && eval "$(fig init zsh pre)"
 
 # If you come from bash you might have to change your $PATH.
