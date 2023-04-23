@@ -30,8 +30,6 @@ export ZSH="$HOME/.zsh/oh-my-zsh"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --preview="cat {}" --preview-window=right:60%:wrap'
 
-zplug "amaya382/zsh-fzf-widgets"
-
 bindkey '^R' fzf-cdr
 bindkey '^H' fzf-history
 # Use ctrl-t instead of tab key
