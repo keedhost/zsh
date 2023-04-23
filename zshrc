@@ -1,3 +1,19 @@
+export OS=$(uname)
+export BIN="$HOME/bin"
+
+if [ $OS = "Linux" ]; then
+    if command -v dpkg >/dev/null 2>&1; then
+        Distro="Debian"
+    elif command -v rpm >/dev/null 2>&1; then
+        Distro="RedHat"
+    else
+        Distro="Other"
+    fi
+fi
+
+
+[ ! -d $BIN ] && mkdir -v $BIN
+
 # Fig pre block. Keep at the top of this file.
 export PATH="${PATH}:${HOME}/.local/bin:${HOME}/bin"
 [ -f "$(which fig)" ] && eval "$(fig init zsh pre)"
@@ -8,8 +24,20 @@ export PATH=$HOME/homebrew/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.zsh/oh-my-zsh"
 
+############################# FZF declaration ##################################
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --preview="cat {}" --preview-window=right:60%:wrap'
+
+zplug "amaya382/zsh-fzf-widgets"
+
+bindkey '^R' fzf-cdr
+bindkey '^H' fzf-history
+# Use ctrl-t instead of tab key
+export ZSH_FZF_PASTE_KEY=ctrl-t
+
+########################### End FZF declaration ################################
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

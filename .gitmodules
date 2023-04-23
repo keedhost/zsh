@@ -1,3 +1,10 @@
+### Update submodules:
+# git submodule update --force --recursive --init --remote 
+
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/stemount/oh-my-zsh.git
+
+[submodule "fzf-tab"]
+	path = oh-my-zsh/custom/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
