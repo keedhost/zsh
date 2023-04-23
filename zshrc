@@ -24,6 +24,49 @@ export PATH=$HOME/homebrew/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.zsh/oh-my-zsh"
 
+
+######################### Oh My Posh declaration ###############################
+## Link: https://ohmyposh.dev
+
+function install-oh-my-posh {
+    if ! command -v oh-my-posh >/dev/null 2>&1; then
+        if [ $OS = "Darwin" ]; then
+            brew install jandedobbeleer/oh-my-posh/oh-my-posh
+        elif [ $OS = "Linux" ]; then
+            wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O $BIN/oh-my-posh
+            chmod +x $BIN/oh-my-posh
+
+            ## Install themes
+            mkdir ~/.poshthemes
+            wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+            unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+            chmod u+rw ~/.poshthemes/*.omp.*
+            rm ~/.poshthemes/themes.zip
+        else
+            echo "Unknown OS — Oh My Posh will not be installed"
+        fi
+    fi
+}
+
+function load-oh-my-posh {
+    install-oh-my-posh
+
+    theme="jandedobbeleer"
+    if [ $OS = "Darwin" ]; then
+        if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+            eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/$theme.omp.json)"
+        fi
+    elif [ $OS = "Linux" ]; then
+        eval "$($BIN/oh-my-posh init zsh --config ~/.poshthemes/$theme.omp.json)"
+    fi
+}
+
+## Do not forget install fonts:
+## oh-my-posh font install
+##
+######################## End Oh My Posh declaration ############################
+
+
 ############################# FZF declaration ##################################
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -145,7 +188,7 @@ alias git_clog="git log \
     --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' \
     --all"
 
-PROMPT="%{${fg_bold[red]}%}%n %{${fg_bold[blue]}%}[%m] $(battery_pct_prompt) %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
-
+# PROMPT="%{${fg_bold[red]}%}%n %{${fg_bold[blue]}%}[%m] $(battery_pct_prompt) %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
+load-oh-my-posh
 # Fig post block. Keep at the bottom of this file.
 [ -f "$(which fig)" ] && eval "$(fig init zsh post)"
