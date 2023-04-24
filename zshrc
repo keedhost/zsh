@@ -42,6 +42,7 @@ function install-oh-my-posh {
             unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
             chmod u+rw ~/.poshthemes/*.omp.*
             rm ~/.poshthemes/themes.zip
+            oh-my-posh font install Noto && echo "Install Noto Mono NERD font as default in your terminal"
         else
             echo "Unknown OS — Oh My Posh will not be installed"
         fi
