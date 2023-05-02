@@ -52,7 +52,7 @@ function install-oh-my-posh {
 function load-oh-my-posh {
     install-oh-my-posh
 
-    theme="jandedobbeleer"
+    theme="rudolfs-dark"
     if [ $OS = "Darwin" ]; then
         if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
             eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/$theme.omp.json)"
