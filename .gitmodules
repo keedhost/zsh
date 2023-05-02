@@ -1,3 +1,8 @@
+#### Add submodule first:
+# git submodule add <remote_url> <destination_folder>
+# git commit -m "Added the submodule to the project."
+# git push
+
 ### Update submodules:
 # git submodule update --force --recursive --init --remote 
 
