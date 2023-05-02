@@ -177,6 +177,10 @@ source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 alias q="cd .."
+
+alias v="vim"
+command -v nvim >/dev/null 2>&1 && alias n="nvim"
+
 alias git_log="git log \
     --graph \
     --pretty=oneline \
