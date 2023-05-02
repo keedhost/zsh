@@ -149,6 +149,16 @@ plugins=(git man sudo colored-man-pages extract zsh-interactive-cd thefuck batte
 
 source $ZSH/oh-my-zsh.sh
 
+ZINIT_HOME="${HOME}/.zsh/zinit"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+#[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+
+# zsh-fzf-history-search
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
