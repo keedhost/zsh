@@ -74,10 +74,10 @@ function load-oh-my-posh {
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --preview="cat {}" --preview-window=right:60%:wrap'
 
-bindkey '^R' fzf-cdr
-bindkey '^H' fzf-history
+#bindkey '^R' fzf-cdr
+#bindkey '^H' fzf-history
 # Use ctrl-t instead of tab key
-export ZSH_FZF_PASTE_KEY=ctrl-t
+#export ZSH_FZF_PASTE_KEY=ctrl-t
 
 ########################### End FZF declaration ################################
 
