@@ -7,13 +7,15 @@
 # git submodule update --force --recursive --init --remote 
 
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/stemount/oh-my-zsh.git
+	path 	= oh-my-zsh
+	url 	= https://github.com/stemount/oh-my-zsh.git
+	branch 	= master
 
 [submodule "fzf-tab"]
-	path = oh-my-zsh/custom/plugins/fzf-tab
-    url = https://github.com/Aloxaf/fzf-tab
+	path 	= oh-my-zsh/custom/plugins/fzf-tab
+    	url 	= https://github.com/Aloxaf/fzf-tab
 
 [submodule "zinit"]
-	path = zinit
-	url = https://github.com/zdharma-continuum/zinit
+	path 	= zinit
+	url	= https://github.com/zdharma-continuum/zinit
+	branch 	= main
