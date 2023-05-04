@@ -190,7 +190,7 @@ alias q="cd .."
 
 alias v="vim"
 command -v nvim >/dev/null 2>&1 && alias n="nvim"
-
+alias httpserver="python3 -m http.server 8000"
 alias git_log="git log \
     --graph \
     --pretty=oneline \
