@@ -72,8 +72,12 @@ function load-oh-my-posh {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-export FZF_DEFAULT_OPTS='--height 40% --preview="cat {}" --preview-window=right:60%:wrap'
 
+if command -v bat >/dev/null 2>&1; then
+    export FZF_DEFAULT_OPTS='--preview="bat {}" --preview-window=right:60%:wrap'
+else
+    export FZF_DEFAULT_OPTS='--preview="cat {}" --preview-window=right:60%:wrap'
+fi
 #bindkey '^R' fzf-cdr
 #bindkey '^H' fzf-history
 # Use ctrl-t instead of tab key
@@ -213,6 +217,7 @@ alias git_clog="git log \
     --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' \
     --all"
 
+alias sshconf="vim ~/.ssh/config"
 # PROMPT="%{${fg_bold[red]}%}%n %{${fg_bold[blue]}%}[%m] $(battery_pct_prompt) %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
 load-oh-my-posh
 # Fig post block. Keep at the bottom of this file.
