@@ -16,7 +16,6 @@ fi
 
 # Fig pre block. Keep at the top of this file.
 export PATH="${PATH}:${HOME}/.local/bin:${HOME}/bin"
-[ -f "$(which fig)" ] && eval "$(fig init zsh pre)"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/homebrew/bin:$PATH
@@ -220,5 +219,3 @@ alias git_clog="git log \
 alias sshconf="vim ~/.ssh/config"
 # PROMPT="%{${fg_bold[red]}%}%n %{${fg_bold[blue]}%}[%m] $(battery_pct_prompt) %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
 load-oh-my-posh
-# Fig post block. Keep at the bottom of this file.
-[ -f "$(which fig)" ] && eval "$(fig init zsh post)"
