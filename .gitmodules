@@ -13,5 +13,8 @@
 
 [submodule "fzf-tab"]
 	path 	= oh-my-zsh/custom/plugins/fzf-tab
-    	url 	= https://github.com/Aloxaf/fzf-tab
+	url 	= https://github.com/Aloxaf/fzf-tab
 
+[submodule "zsh-autosuggestions"]
+	path 	= oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url 	= https://github.com/zsh-users/zsh-autosuggestions.git
